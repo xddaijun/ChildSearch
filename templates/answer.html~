@@ -1,0 +1,51 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN"> 
+<html> 
+<head> 
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<title>soso儿童搜索 专为儿童设计</title> 
+ <link href="/media/style.css" rel="stylesheet" type="text/css" />
+
+ 
+</head> 
+<body onLoad="init();"   onmouseup="return mup(event)"> 
+ 
+<div id="pageBody"> 
+<div id="headerLinks"> 
+<div class="nobr"> 
+<a class="KL2 b headerLink" onMouseDown="return ct(this,30033);"   target="_top"></a> 
+<span class="KT2 b">&#160;&#160;</span> 
+<a class="KL2 b headerLink" onMouseDown="return ct(this,30034);"  target="_top"></a> 
+</div> 
+</div> 
+<canvas id="doodle" style="position:absolute;top:0px;left:0px;overflow:hidden;" width="800" height="600"></canvas> 
+<form action="/search" method="get" style="margin:0;padding:0"> 
+<div id="headerBox"> 
+<div id="logoBox"> 
+<div id="logo"></div> 
+</div> 
+ 
+<input type="text" name="q" id="q" value="{{keyword}}" autocomplete="off"> &nbsp;
+<button id="sbut" value="search" name="search" type="submit"></button> 
+ 
+</div> 
+
+
+
+      
+<div style="clear:both"></div> 
+</div> 
+
+</form> 
+ 
+<div> 
+<ul>
+{{content}}
+</ul>
+</div> 
+ 
+ 
+</body> 
+  
+</html> 

@@ -1,0 +1,87 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN"> 
+<html> 
+<head> 
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<title>soso儿童搜索 专为儿童设计</title> 
+ <link href="/media/style.css" rel="stylesheet" type="text/css" />
+
+ 
+</head> 
+<body onLoad="init();"   onmouseup="return mup(event)"> 
+ 
+<div id="pageBody"> 
+<div id="headerLinks"> 
+<div class="nobr"> 
+<a class="KL2 b headerLink" onMouseDown="return ct(this,30033);"   target="_top"></a> 
+<span class="KT2 b">&#160;&#160;</span> 
+<a class="KL2 b headerLink" onMouseDown="return ct(this,30034);"  target="_top"></a> 
+</div> 
+</div> 
+<canvas id="doodle" style="position:absolute;top:0px;left:0px;overflow:hidden;" width="800" height="600"></canvas> 
+<form action="/search" method="get" style="margin:0;padding:0"> 
+<div id="headerBox"> 
+<div id="logoBox"> 
+<div id="logo"></div> 
+</div> 
+<div id="queryContainer"> 
+<input type="text" name="q" id="q" value="{{keyword}}" autocomplete="off"> &nbsp;
+<button id="sbut" value="search" name="search" type="submit"></button> 
+ <p style="font-size:15px"><h3> {% if outwords %} 你找是不是：{% endif %}
+{% for word in outwords %} <a href="/search?q={{ word }}">{{ word }}</a> {% endfor %} </h3></p>
+</div> 
+<div style="clear:both"></div> 
+</div> 
+
+</form> 
+<div id="dogContainer"> 
+<div> 
+<div id="dog"> 
+</div> 
+</div> 
+
+<a href="#" > 
+<img id="label2" src="/media/label2.png" onMouseOver="this.src='/media/label2o.png'" onMouseOut="this.src='/media/label2.png'" > 
+</a> 
+<a href="#" > 
+<img id="label3" src="/media/label3.png" onMouseOver="this.src='/media/label3o.png'" onMouseOut="this.src='/media/label3.png'" onload="ie6pngfix(this)"> 
+</a> 
+<a href="#" > 
+<img id="label8" src="/media/label8.png" onMouseOver="this.src='/media/label8o.png'" onMouseOut="this.src='/media/label8.png'" onload="ie6pngfix(this)"> 
+</a> 
+<a href="#" > 
+<img id="label10" src="/media/label10.png" onMouseOver="this.src='/media/label10o.png'" onMouseOut="this.src='/media/label10.png'" onload="ie6pngfix(this)"> 
+</a>
+<div id="promo"></div> 
+<div id="promoTopLeft"></div> 
+<div id="promoBotRight"></div> 
+ 
+</div> 
+<div id="footer" style="width:100%;position:absolute;bottom:0;"> 
+  
+<div id="ftLinksCnt"> 
+<table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+<tr> 
+<td align="right"> 
+<div> 
+<center>
+ <p id="bm"><!--[if IE]><a id="sh" href="javascript:;" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.soso.com/');">设搜搜为主页</a>|<![endif]--><a target="_blank" href="http://tg.qq.com">搜索推广</a>|<a target="_blank" href="http://soso.qzone.qq.com">团队博客</a>|<a target="_blank" href="http://help.soso.com/duty.html">免责声明</a>|<a target="_blank" href="http://home.soso.com/">关于搜搜</a>|<a id="hp" target="_blank" href="http://help.soso.com/help_web.shtml">帮助</a></p></center>
+
+ 
+</div> 
+</td> 
+</tr> 
+<tr> 
+<td align="right"> 
+<div class="KT1">&#169;&#160;2011&#160;儿童搜搜</div> 
+</td> 
+</tr> 
+</table> 
+</div> 
+</div> 
+ 
+ 
+</body> 
+  
+</html> 
