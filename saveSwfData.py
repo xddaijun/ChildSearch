@@ -48,7 +48,7 @@ class Crawler(threading.Thread):
             with self.lock:
                 self.running += 1
             try:
-                gamename,gamepic,gamepath = self.parse(req)
+                gamename,gamepic,gamepath = getswfgame(req)
             except Exception, what:
                 gamename = ''
                 print what,req
@@ -61,12 +61,12 @@ class Crawler(threading.Thread):
           
             
 def startCal(savefun):    
-    f = Crawler(threads=30,parsefun=getswfgame)
-    for i in range(14400,14500,3):
+    f = Crawler(threads=30)
+    for i in range(10000,60000):
         f.push_req("http://www.7k7k.com/swf/%.5d.htm"%i) 
    
     while f.taskleft():
-        savefun(f.pop())        
+        savefun(f.pop(),2)        
   
 def getswfgame(url):
   
@@ -81,6 +81,7 @@ def getswfgame(url):
 
     
 def main():
+    pass
     #startCal()
     #print getswfgame('http://www.7k7k.com/swf/10462.htm')
     #getspecialgame('http://www.7k7k.com/special/zhiwu/')

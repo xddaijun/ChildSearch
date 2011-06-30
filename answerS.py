@@ -15,6 +15,7 @@ def searchByWord(key):
     content=""
     for lli in soup('li')[1:]:
         content=content+"%s"%lli
+#    content.
     #content=soup('a',href=re.compile('ansdetail\.aspx\?uid='))[9]['href']
     return content
 
