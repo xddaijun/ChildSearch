@@ -18,7 +18,9 @@ def checkPY(request):
         if len(outwords)>0:            
             return render_to_response('index.html',locals())
         else:
-            if keyword.find(u"哪")>=0:
+            if keyword.find(u"哪")>=0 or keyword.find(u"什么")>=0 or \
+            keyword.find(u"怎么")>=0 or keyword.find(u"为什么")>=0 \
+            or keyword.find(u"多少")>=0:
                 content=answerS.searchByWord(keyword.encode("utf-8"))                
                 return render_to_response('answer.html',locals())
             else:
@@ -26,5 +28,6 @@ def checkPY(request):
     else:
         return render_to_response('index.html')
 
-
+def default(request):
+    return render_to_response('index.html')
 

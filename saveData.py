@@ -17,10 +17,13 @@ def savefun(savedata,tp):
     #curl.save()   
     cur =conn.cursor()
     if len(savedata[0])>1:
-        cur.execute("insert into  crawl_crawl_url(sdate,url,name,gpic,stype) \
-        values('%s','%s','%s','%s','%d')"%(str(datetime.datetime.now()),\
-               savedata[2],savedata[0],savedata[1],tp))
-        print savedata[0]
+        try:
+            cur.execute("insert into  crawl_crawl_url(sdate,url,name,gpic,stype) \
+            values('%s','%s','%s','%s','%d')"%(str(datetime.datetime.now()),\
+                   savedata[2],savedata[0],savedata[1],tp))
+            print savedata[0]
+        except Exception, what:            
+            print "expetion"
 
 
 def main():
