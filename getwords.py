@@ -6,7 +6,7 @@ Created on Sat Jun 25 16:37:12 2011
 """
 
 from urllib import urlopen
-import json
+import simplejson as json
 import time
 import re
 

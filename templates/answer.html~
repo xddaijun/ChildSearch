@@ -1,51 +1,122 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN"> 
-<html> 
-<head> 
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>soso儿童搜索 专为儿童设计</title> 
- <link href="/media/style.css" rel="stylesheet" type="text/css" />
+<style>
+html, body {
+margin:0px;
+padding:0px;
+overflow:hidden;
+border-width:0px;
+width:100%;
+height:100%;
+}
 
- 
-</head> 
-<body onLoad="init();"   onmouseup="return mup(event)"> 
- 
-<div id="pageBody"> 
-<div id="headerLinks"> 
-<div class="nobr"> 
-<a class="KL2 b headerLink" onMouseDown="return ct(this,30033);"   target="_top"></a> 
-<span class="KT2 b">&#160;&#160;</span> 
-<a class="KL2 b headerLink" onMouseDown="return ct(this,30034);"  target="_top"></a> 
-</div> 
-</div> 
-<canvas id="doodle" style="position:absolute;top:0px;left:0px;overflow:hidden;" width="800" height="600"></canvas> 
-<form action="/search" method="get" style="margin:0;padding:0"> 
-<div id="headerBox"> 
-<div id="logoBox"> 
-<div id="logo"></div> 
-</div> 
- 
-<input type="text" name="q" id="q" value="{{keyword}}" autocomplete="off"> &nbsp;
-<button id="sbut" value="search" name="search" type="submit"></button> 
- 
-</div> 
+body {
+background-image:url(/media/head.jpg);
+badk
+background-repeat:repeat-x;
+}
+
+#q {
+left: 0px;
+border: 1px solid #7F9DB9;
+width: 400px;
+height: 20px;
+line-height: 20px;
+padding: 4px 0 0 1px;
+}
+#sbut {
+background-image:url(/media/search1.gif);
+width:77px;
+height:26px;
+border: medium none;
+padding: 0;
+vertical-align: top;
+}
 
 
+div#logo{
+z-index:100;
+top:10px;
+height: 70px;
+width: 280px;
+background-image: url(/media/logo.png);
+}
 
-      
-<div style="clear:both"></div> 
-</div> 
+div table {
+	width:99%;
+}
 
-</form> 
- 
-<div> 
+.linkTitle{
+	font-size:24px;
+}
+.linkContent{
+	text-decoration:none;
+	color:#C0C;
+}
+#q_find{
+	position:absolute;
+	color:#C00;
+	top:100px;
+	left:2%;
+}
+#q_space{
+	z-index:110px;
+	background-repeat:repeat-y;
+	background-image: url(/media/line.jpg);
+}
+#q_ad{
+	width:80%;
+}
+</style>
+</head>
+
+<body>
+
+<form action="#" style="margin:0;padding:0"> 
+<div id = "logobox"  align="center">
+<div id="logo"></div>
+</div>
+<div id = "q_search" align="center">
+<input type="text" name="q" id="q" value="" autocomplete="off">&nbsp;<input id="sbut" value="" name="search" type="submit"></input>
+</div>
+</form>
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr> <td width="40%">
+<div id = "q_content">
+<br/><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr height="3%"><td colspan="2"></td></tr>
+<tr>
+<td width="3%"></td>
+<td width="80%">
+<div>
 <ul>
-{{content}}
-</ul>
-</div> 
- 
- 
-</body> 
-  
-</html> 
+  {{content|safe}}
+</url>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td width="20%">
+<div id ="q_space"></div></td>
+<td width="40%">
+<div id ="q_ad">
+<br/><br/>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr><td  colspan="2"><a class="linkTitle" href="#"></a> </td></tr>
+    <tr><td colspan="2">
+	</td></tr>
+    <tr><td colspan="2"> <a class="linkContent" href = "#"></a></td></tr>
+    </table>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -6,9 +6,10 @@ import settings
 # from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    url(r'^search', 'childsearch.views.checkPY', name='home'),
+urlpatterns = patterns('',    
     url(r'^$', 'childsearch.views.default', name='home'),
+    url(r'^search', 'childsearch.views.checkPY', name='home'),
+    url(r'^showpage', 'childsearch.views.showpage', name='home'),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
     ('^admin/',include(admin.site.urls)),
     

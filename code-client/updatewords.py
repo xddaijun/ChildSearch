@@ -9,6 +9,16 @@ import time
 import re
 import sys
 
+dicts=open('/home/mark/cpp/phptool_for_scws_xdb/dict.txt')
+wordsset=set()
+alllines = dicts.readlines( )
+for line in alllines:
+    line=line.strip()
+    if line[0]!='#':
+         words=line.split()
+         wordsset.add(words[0])
+dicts.close()
+
 def parseFromSql():
     f=open('out.txt','r')
     g=open('game.txt','w')    
@@ -21,9 +31,17 @@ def parseFromSql():
                 w=re.sub(r"小游戏","",word[0])
                 w=re.sub(r"[A-Za-z0-9]{2,}","",w)
                 w=re.sub(r"(\-\w*$)","",w)
+                w=w.strip()
+                if len(w)<=6:
+                    continue
+                if w in wordsset and len(w)<=9:
+                    print w
+                    continue
                 if w.find("-")>=0 or w.find("_")>=0 or w.find("专题")>=0:
                     continue
-                print>>g,("%s\t10.42\t10.32\t%s")%(w,word[-1])
+                highnum=(int(word[-1][2:]))/5000.0
+                #lownum=(int(word[-1][2:])%100)/10.0
+                print>>g,("%s\t10.41\t%.4f\tyx")%(w,highnum)
             except Exception, what:
                 print what       
     f.close()
@@ -36,7 +54,7 @@ def parseFromSougou():
         fs=open(f,'r')
         alllines = fs.readlines( )
         for line in alllines:
-            word=line.strip()
+            word=line.strip()            
             print>>g,("%s\t10.42\t10.32\tmv")%word
     g.close()
             
@@ -46,6 +64,7 @@ def main():
     reload(sys)
     sys.setdefaultencoding('utf-8')
     parseFromSougou()
+    parseFromSql()
      
     
 if __name__ == '__main__':

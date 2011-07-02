@@ -7,13 +7,15 @@
 html, body {
 margin:0px;
 padding:0px;
+overflow:hidden;
 border-width:0px;
 width:100%;
 height:100%;
 }
 
 body {
-background-image:url(/media/head.jpg);
+background-image:url(img/head.jpg);
+badk
 background-repeat:repeat-x;
 }
 
@@ -26,7 +28,7 @@ line-height: 20px;
 padding: 4px 0 0 1px;
 }
 #sbut {
-background-image:url(/media/search1.gif);
+background-image:url(img/search1.gif);
 width:77px;
 height:26px;
 border: medium none;
@@ -40,7 +42,7 @@ z-index:100;
 top:10px;
 height: 70px;
 width: 280px;
-background-image: url(/media/logo.png);
+background-image: url(img/logo.png);
 }
 
 div table {
@@ -63,7 +65,7 @@ div table {
 #q_space{
 	z-index:110px;
 	background-repeat:repeat-y;
-	background-image: url(/media/line.jpg);
+	background-image: url(img/line.jpg);
 }
 #q_ad{
 	width:80%;
@@ -73,7 +75,7 @@ div table {
 
 <body>
 
-<form action="#" style="margin:0;padding:0"> 
+<form action="http:\\www.baidu.com" style="margin:0;padding:0"> 
 <div id = "logobox"  align="center">
 <div id="logo"></div>
 </div>
@@ -81,7 +83,7 @@ div table {
 <input type="text" name="q" id="q" value="" autocomplete="off">&nbsp;<input id="sbut" value="" name="search" type="submit"></input>
 </div>
 </form>
-
+<div id = "q_find">是不是要找。。。</div>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr> <td width="40%">
 <div id = "q_content">
@@ -91,11 +93,12 @@ div table {
 <tr>
 <td width="3%"></td>
 <td width="80%">
-<div>
-<ul>
-  {{content|safe}}
-</url>
-</div>
+    <table border="0" cellpadding="0" cellspacing="0">
+    <tr><td  colspan="2"><a class="linkTitle" href="#">SOSO搜搜</a> </td></tr>
+    <tr><td colspan="2">卡机了第三方将奥丝蓝黛放假啊三闾大夫看见了萨达房间卡塑料袋口福建省拉得开飞将萨达开发口浪费就爱死了快递费就撒了的咖啡就撒了的口福建省
+	</td></tr>
+    <tr><td colspan="2"> <a class="linkContent" href = "#">http:www.baidu.com</a></td></tr>
+    </table>
 </td>
 </tr>
 </table>
