@@ -11,6 +11,7 @@ import re
 
 
 def searchByWord(key):
+    key=key.encode("utf-8")
     c=urllib2.urlopen("http://www.baizhitong.com/answer.aspx?qry="+key)
     soup=BeautifulSoup(c.read())
     content=""

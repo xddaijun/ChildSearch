@@ -18,16 +18,15 @@ def postseg(text):
 def ismvorgame(words):
     words=words.encode("utf-8")
     words=postseg(words)
-    for w in words:
-        if w['attr'].find('yx')>=0 :
+    for w in words:        
+        if w['attr']=="yx" :
             return ('game',str(int(w['idf']*5000+0.01)))
         elif w['attr'].find('mv')>=0 :
             return ('movie','')
-        else:
-            return ('other','')
+    return ('other','')
     
 def main():
-    words="裸婚时代"
+    words="我要玩五子连珠"    
     print ismvorgame(words)
     
 if __name__ == '__main__':

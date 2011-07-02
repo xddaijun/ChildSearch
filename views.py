@@ -10,6 +10,7 @@ import getwords
 import answerS
 import webSeg
 import getSoSoData
+from childsearch.crawl.models import Crawl_URL
 
 def checkPY(request):
     if 'q' in request.GET:
@@ -23,19 +24,24 @@ def checkPY(request):
         or keyword.find(u"多少")>=0 or keyword.find(u"如何")>=0:
             content=answerS.searchByWord(keyword)                
             return render_to_response('answer.html',locals())
-        elif webSeg.ismvorgame(keyword)[0]=='game':
+        elif webSeg.ismvorgame(keyword)[0]=='game':            
+            game=Crawl_URL.objects.filter(id=int(webSeg.ismvorgame(keyword)[1]))           
+            #flash=int(webSeg.ismvorgame(keyword)[1])
+            liurls=getSoSoData.getfromSOSO("%s  site:7k7k.com"%keyword.encode("utf-8"))
             return render_to_response('game.html',locals())
         elif webSeg.ismvorgame(keyword)[0]=='movie':
             liurls=getSoSoData.getfromSOSO("%s  site:tv.sohu.com"%keyword.encode("utf-8"))
             return render_to_response('movie.html',locals())
         else:
-            content=answerS.searchByWord(keyword.encode("utf-8"))                
+            content=answerS.searchByWord(keyword)                
             return render_to_response('answer.html',locals())
     else:
         return render_to_response('index.html')
 
 def default(request):
-    return render_to_response('index.html')
+    isFirst=True
+    fwords=["zenmexueyingyu","我要玩五子连珠","白雪公主动画片",'学历史有什么用']
+    return render_to_response('index.html',locals())
 
 
 def showpage(request):
