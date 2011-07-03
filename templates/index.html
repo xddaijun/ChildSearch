@@ -99,8 +99,8 @@ table tr td{
 <input id="sbut" value="" type="submit"></input>
 <p style="font-size:15px"><h3> {% if fwords %} 示例输入：{% endif %}
 {% for word in fwords %} <a href="/search?q={{ word }}">{{ word }}</a> {% endfor %} </h3></p>
- <p style="font-size:15px"><h3> {% if outwords %} 你找是不是：{% endif %}
-{% for word in outwords %} <a href="/search?q={{ word }}">{{ word }}</a> {% endfor %} </h3></p>
+  {% if outwords %}<p style="font-size:15px"><h3> 你找是不是：
+{% for word in outwords %} <a href="/search?q={{ word }}">{{ word }}</a> {% endfor %} </h3></p>{% endif %}
 </div>
 </form>
 <br/>
