@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Jul  1 21:08:31 2011
+在线分词
 
 @author: mark
 """

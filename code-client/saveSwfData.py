@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 Created on Thu Jun 30 11:50:16 2011
-
+多线程读取7k7k.com的单个游戏，结构化抽取其中的swf页面，并保存到数据库中
 @author: mark
 '''
 import urllib2

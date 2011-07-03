@@ -28,9 +28,6 @@ def getfromSOSO(query):
         outstr.append((liurl('a')[0]['href'],liurl('a')[0].getText(),liurl('p')[0].getText))
         #outstr[1]=
     return outstr[0:8]
-    #sss=sss[0].find('a',href=re.compile('tv\.sohu\.com'))
-    ##sss=soup('a',href=re.compile('tv\.sohu\.com'))[9]['href']
-    #return sss # self.charset -> unicode
     
 def main():
     reload(sys)

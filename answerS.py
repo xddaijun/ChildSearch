@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Jun 26 21:09:06 2011
+读取baizhitong.com自动问答网站的搜索结果
 
 @author: mark
 """

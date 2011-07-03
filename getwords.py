@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Jun 25 16:37:12 2011
+读取QQ输入法的拼音结果，将拼音转化为汉字
 
 @author: mark
 """
